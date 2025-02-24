@@ -1,4 +1,4 @@
-namespace Project20.Models {
+namespace Project20.Models.ViewModels {
     public class ErrorViewModel {
         public string? RequestId { get; set; }
 

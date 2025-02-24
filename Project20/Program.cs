@@ -1,4 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Project20.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<Project20Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Project20Context") ?? throw new InvalidOperationException("Connection string 'Project20Context' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
